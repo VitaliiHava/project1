@@ -1,10 +1,16 @@
 .head {
-    background-color: #0c8484;
+    background-color: #e3ddc4;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
     height: 100px;
     margin: 0 auto;
+    position: absolute;
     text-align: center;
     width: 100%;
 }
 .title {
-    margin-top: 50px;
+    color: #2b7d67;
+    font-size: 30px;
+    margin-top: 20px;
+    position:relative;
+    text-shadow: 1px 1px 15px #000;
 }
