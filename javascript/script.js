@@ -17,7 +17,6 @@ $(document).ready(function showTable() {
 
 function  income() {
     var inc = $("#inputIncome").val();
-    //console.log("Доход: "+val);
     $.ajax({
         method: "POST",
         url: "requests.php",
@@ -32,7 +31,6 @@ function  income() {
 
 function expense() {
     znak = $("#inputExpense").val();
-    //console.log ("Расход: "+val);
     $.ajax({
         method: "POST",
         url: "requests.php",

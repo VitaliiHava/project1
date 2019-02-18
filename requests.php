@@ -15,7 +15,7 @@ if (isset ($_POST['income'])) {
     if (filter_var($inc, FILTER_VALIDATE_INT)) {
         echo $inc;
     }
-    else die ("в поле ДОЛЖНО БЫТЬ ЧИСЛОВОЕ ЗНАЧЕНИЕ!");
+    else die ("ВВЕДИ ЧИСЛОВОЕ ЗНАЧЕНИЕ!");
 }
 
 if (isset ($_POST['expense'])) {
