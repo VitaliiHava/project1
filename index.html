@@ -11,17 +11,24 @@
     <title>index</title>
 </head>
 <body>
-    <div class="head">
-        <h1 class="title">Simple task manager</h1>
+<!--    <div class="head">
+        <h1 class="title">Simple budget</h1>
         <h3>Description</h3>
-    </div>
+    </div>-->
     <div class="body">
-        <form style="position:relative">
-            <input type="checkbox">
-            <input type="text" placeholder="task">
-            <input type="text" placeholder="dscription">
-            <input type="button" value="submit" onclick="onClick()">
+
+
+        <form>
+            <input id="inputIncome" type="number" placeholder="Доход" autocomplete="off">
+            <input type="button" onclick="income()" value="Отправить">
+            <br/>
+            <br/>
+
+            <input id="inputExpense" type="number" placeholder="Расход" autocomplete="off">
+            <input type="button" onclick="expense()" value="Отправить">
         </form>
     </div>
+<div id="tableIncome"></div>
+<div id="tableExpense"></div>
 </body>
 </html>
