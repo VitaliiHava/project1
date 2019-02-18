@@ -1,5 +1,5 @@
 $(document).ready(
-  console.log("QOO QOO!")
+  //console.log("QOO QOO!")
 
 );
 
