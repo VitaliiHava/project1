@@ -10,11 +10,31 @@ $pMysqli = new mysqli('127.0.0.1', 'root','','budget');
 
 $query = "SELECT * FROM debet";
 
+class Budget {
+    public $inc;
+    public $exp;
+    public $cat;
+    public $date;
+
+    public function setIncome ($inc, $cat, $date) {
+        $this->$inc = $inc;
+        $this->$cat = $cat;
+        $this->$date = $date;
+        echo $inc."<br/>".$cat."<br/>".$date;
+    }
+    public function setExpense ($exp, $cat, $date) {
+        $this->$exp = $exp;
+        $this->$cat = $cat;
+        $this->$date = $date;
+        echo $exp."<br/>".$cat."<br/>".$date;
+    }
+}
+
 if (isset ($_POST['income'])) {
     $inc = $_POST['income'];
     if (filter_var($inc, FILTER_VALIDATE_INT)) {
-        $response = new Income;
-        $response->setIncome($_POST['income']);
+        $response = new Budget;
+        $response->setIncome($_POST['income'],$_POST['cat'],$_POST['date']);
     }
     else die ("ВВЕДИ ЧИСЛОВОЕ ЗНАЧЕНИЕ!");
 }
@@ -22,24 +42,8 @@ if (isset ($_POST['income'])) {
 if (isset ($_POST['expense'])) {
     $exp = $_POST['expense'];
     if (filter_var($exp, FILTER_VALIDATE_INT)) {
-        $response = new Expense;
-        $response->setExpense($_POST['expense']);
+        $response = new Budget;
+        $response->setExpense($_POST['expense'],$_POST['cat'],$_POST['date']);
     }
     else die ("ВВЕДИ ЧИСЛОВОЕ ЗНАЧЕНИЕ!");
-}
-
-class Income {
-    public $inc;
-    public function setIncome ($inc) {
-        $this->$inc = $inc;
-        echo $inc;
-    }
-}
-
-class Expense {
-    public $exp;
-    public function setExpense ($exp) {
-        $this->$exp = $exp;
-        echo $exp;
-    }
 }

@@ -13,29 +13,47 @@ $(document).ready(
     );
 
 function  income() {
+
     var inc = $("#inputIncome").val();
+    var incCat = $("#inputIncomeCat").val();
+    var incDate = $("#inputIncomeDate").val();
+
     $.ajax({
         method: "POST",
         url: "requests.php",
-        data: { income: inc }
+        data: {
+            income  : inc,
+            cat     : incCat,
+            date    : incDate
+        }
     })
+
         .done(function( response ) {
-            console.log (response);
-            $('#inputIncome').val('');
+            $('#inputIncome, #inputIncomeCat, #inputIncomeDate').val('');
             $('#tableIncome').html(response);
         });
+
 }
 
 function expense() {
-    znak = $("#inputExpense").val();
+
+    var exp = $("#inputExpense").val();
+    var expCat = $("#inputExpenseCat").val();
+    var expDate = $("#inputExpenseDate").val();
+
     $.ajax({
         method: "POST",
         url: "requests.php",
-        data: { expense: znak }
+        data: {
+            expense : exp,
+            cat     : expCat,
+            date    : expDate
+        }
     })
+
         .done(function( response ) {
-            console.log (response);
-            $('#inputExpense').val('');
+            $('#inputExpense, #inputExpenseCat, #inputExpenseDate').val('');
             $('#tableIncome').html(response);
         });
+
 }
