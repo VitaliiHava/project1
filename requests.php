@@ -16,19 +16,23 @@ class Budget {
     public $cat;
     public $date;
 
-    public function __construct($cat, $date)
+/*    public function __construct($cat, $date)
     {
         $this->$cat = $cat;
         $this->$date = $date;
-    }
+    }*/
 
     public function setIncome ($inc, $cat, $date) {
         $this->$inc = $inc;
+        $this->$cat = $cat;
+        $this->$date = $date;
         echo $inc."<br/>".$cat."<br/>".$date;
     }
 
     public function setExpense ($exp, $cat, $date) {
         $this->$exp = $exp;
+        $this->$cat = $cat;
+        $this->$date = $date;
         echo $exp."<br/>".$cat."<br/>".$date;
     }
 }
