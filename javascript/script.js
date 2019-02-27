@@ -1,4 +1,4 @@
-$(document).ready(
+/*$(document).ready(
         function showTable() {
             $.ajax({
                 method: "POST",
@@ -10,10 +10,9 @@ $(document).ready(
                 $('#table').html(response);
             });
         }
-    );
+    );*/
 
 function  income() {
-
     var inc = $("#inputIncome").val();
     var incCat = $("#inputIncomeCat").val();
     var incDate = $("#inputIncomeDate").val();
@@ -26,17 +25,13 @@ function  income() {
             cat     : incCat,
             date    : incDate
         }
-    })
-
-        .done(function( response ) {
-            $('#inputIncome, #inputIncomeCat, #inputIncomeDate').val('');
-            $('#tableIncome').html(response);
-        });
-
+    }).done(function( response ) {
+        $('#inputIncome, #inputIncomeCat, #inputIncomeDate').val('');
+        $('#tableIncome').html(response);
+    });
 }
 
 function expense() {
-
     var exp = $("#inputExpense").val();
     var expCat = $("#inputExpenseCat").val();
     var expDate = $("#inputExpenseDate").val();
@@ -49,11 +44,8 @@ function expense() {
             cat     : expCat,
             date    : expDate
         }
-    })
-
-        .done(function( response ) {
+    }).done(function( response ) {
             $('#inputExpense, #inputExpenseCat, #inputExpenseDate').val('');
             $('#tableIncome').html(response);
         });
-
 }
