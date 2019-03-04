@@ -1,16 +1,30 @@
-/*$(document).ready(
-        function showTable() {
-            $.ajax({
-                method: "POST",
-                url: "requests.php",
-                data: { request: "table" }
-            })
+$(document).ready(
+    function showIncome() {
+        $.ajax({
+            method: "POST",
+            url: "requests.php",
+            data: { table: "income",
+                    sort : "ASC"}
+        })
+        .done(function( response ) {
+            console.log (response);
+            $('#tableIncome').html(response);
+        });
+    }
+);
+$(document).ready(
+    function showExpense() {
+        $.ajax({
+            method: "POST",
+            url: "requests.php",
+            data: { table: "expense",
+                sort : "ASC"}
+        })
             .done(function( response ) {
-                console.log (response);
-                $('#table').html(response);
+                $('#tableExpense').html(response);
             });
-        }
-    );*/
+    }
+);
 
 function  income() {
     var inc = $("#inputIncome").val();
@@ -27,6 +41,7 @@ function  income() {
         }
     }).done(function( response ) {
         $('#inputIncome, #inputIncomeCat, #inputIncomeDate').val('');
+        $('#tableIncome').html('');
         $('#tableIncome').html(response);
     });
 }
@@ -46,6 +61,7 @@ function expense() {
         }
     }).done(function( response ) {
             $('#inputExpense, #inputExpenseCat, #inputExpenseDate').val('');
-            $('#tableIncome').html(response);
+            $('#tableExpense').html('');
+            $('#tableExpense').html(response);
         });
 }

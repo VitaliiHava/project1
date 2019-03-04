@@ -11,20 +11,30 @@
     <title>index</title>
 </head>
 <body>
-    <div class="body">
-        <form>
-            <input id="inputIncome" type="number" placeholder="Доход" autocomplete="off">
-            <input id="inputIncomeCat" type="text" placeholder="Категория" autocomplete="off">
-            <input id="inputIncomeDate" type="date">
-            <input type="button" onclick="income()" value="Отправить">
+    <div id="wrapper">
+        <div class="form">
+            <form>
+                    <input id="inputIncome" type="number" placeholder="Доход" autocomplete="off">
+                    <input id="inputIncomeCat" type="text" placeholder="Категория" autocomplete="off">
+                    <input id="inputIncomeDate" type="date">
+                    <input type="button" onclick="income()" value="Отправить">
+            </form>
+            <form>
+                    <input id="inputExpense" type="number" placeholder="Расход" autocomplete="off">
+                    <input id="inputExpenseCat" type="text" placeholder="Категория" autocomplete="off">
+                    <input id="inputExpenseDate" type="date"/>
+                    <input type="button" onclick="expense()" value="Отправить">
 
-            <input id="inputExpense" type="number" placeholder="Расход" autocomplete="off">
-            <input id="inputExpenseCat" type="text" placeholder="Категория" autocomplete="off">
-            <input id="inputExpenseDate" type="date"/>
-            <input type="button" onclick="expense()" value="Отправить">
-        </form>
+            </form>
+        </div>
+        <div class="table">
+            <div id="tableIncome">Income</div>
+            <div id="tableExpense">Expense</div>
+        </div>
+
+<!--        <div id="header"></div>
+        <div id="menu"></div>
+        <div id="footer"></div>-->
     </div>
-<div id="tableIncome"></div>
-<div id="tableExpense"></div>
 </body>
 </html>
