@@ -12,29 +12,48 @@
 </head>
 <body>
     <div id="wrapper">
-        <div class="form">
-            <form>
-                    <input id="inputIncome" type="number" placeholder="Доход" autocomplete="off">
-                    <input id="inputIncomeCat" type="text" placeholder="Категория" autocomplete="off">
-                    <input id="inputIncomeDate" type="date">
-                    <input type="button" onclick="income()" value="Отправить">
-            </form>
-            <form>
-                    <input id="inputExpense" type="number" placeholder="Расход" autocomplete="off">
-                    <input id="inputExpenseCat" type="text" placeholder="Категория" autocomplete="off">
-                    <input id="inputExpenseDate" type="date"/>
-                    <input type="button" onclick="expense()" value="Отправить">
+        <div class="parent" id="father">
 
-            </form>
-        </div>
-        <div class="table">
-            <div id="tableIncome">Income</div>
-            <div id="tableExpense">Expense</div>
-        </div>
+            <div class="child" id="vasia">
+                <div class="form">
+                    <form>
+                        <input id="inputIncome" type="number" placeholder="Доход" autocomplete="off">
+                        <input id="inputIncomeCat" type="text" placeholder="Категория" autocomplete="off">
+                        <input id="inputIncomeDate" type="date">
+                        <input type="button" onclick="income()" value="Отправить">
+                    </form>
+                </div>
+                <div>
+                    <table id="tableIncome">
+                        <tr>
+                            <td>Категория</td>
+                            <td>Сумма</td>
+                            <td>Дата</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="child" id="petya">
+                <div class="form">
+                    <form>
+                        <input id="inputExpense" type="number" placeholder="Расход" autocomplete="off">
+                        <input id="inputExpenseCat" type="text" placeholder="Категория" autocomplete="off">
+                        <input id="inputExpenseDate" type="date"/>
+                        <input type="button" onclick="expense()" value="Отправить">
+                    </form>
+                </div>
+                <div>
+                    <table id="tableExpense">
+                        <tr>
+                            <td>Категория</td>
+                            <td>Сумма</td>
+                            <td>Дата</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
 
-<!--        <div id="header"></div>
-        <div id="menu"></div>
-        <div id="footer"></div>-->
+        </div>
     </div>
 </body>
 </html>

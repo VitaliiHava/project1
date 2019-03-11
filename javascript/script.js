@@ -41,7 +41,7 @@ function  income() {
         }
     }).done(function( response ) {
         $('#inputIncome, #inputIncomeCat, #inputIncomeDate').val('');
-        $('#tableIncome').html('');
+        $('#tableIncome tbody').html('');
         $('#tableIncome').html(response);
     });
 }

@@ -15,9 +15,14 @@ class Budget
 
     public function getIncome($query)
     {
+        echo "    <tr>
+                <th>Категория</th>
+                <th>Сумма</th>
+                <th>Дата</th>
+                </tr>";
         $result = $this->pMysqli->query($query);
         while (($row = $result->fetch_assoc()) != false)
-            echo "<div id='inc'>Категория: " . $row['category'] . "<br> Сумма: " . $row['income'] . " грн.<br> Дата: " . $row['date'] . "<br> </div><br>";
+            echo "<tr><td>" . $row['category'] . "</td><td>" . $row['income'] . "</td><td> " .date("d.m.Y", strtotime($row['date'])). "</td></tr>";
     }
 
     public function setIncome ($inc, $cat, $date)
@@ -33,9 +38,14 @@ class Budget
 
     public function getExpense($query)
     {
+        echo "    <tr>
+                <th>Категория</th>
+                <th>Сумма</th>
+                <th>Дата</th>
+                </tr>";
         $result = $this->pMysqli->query($query);
         while (($row = $result->fetch_assoc()) != false)
-            echo "<div id='inc'>Категория: " . $row['category'] . "<br> Сумма: " . $row['expense'] . " грн.<br> Дата: " . $row['date'] . "<br> </div><br>";
+            echo "<tr><td>" . $row['category'] . "</td><td> " . $row['expense'] . " </td><td> " .date("d.m.Y", strtotime($row['date'])). "</td></tr>";
     }
 
     public function setExpense ($exp, $cat, $date)
