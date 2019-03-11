@@ -25,22 +25,17 @@ class Budget
         $this->$inc = $inc;
         $this->$cat = $cat;
         $this->$date = $date;
-
         if ($date == "")
             $date = date("Y-m-d");
-
         $querySetIncome = "INSERT INTO debet (`id`, `date`, `income`, `category`) VALUES (NULL, '$date', '$inc', '$cat')";
-
         mysqli_query($this->pMysqli,$querySetIncome);
     }
 
     public function getExpense($query)
     {
         $result = $this->pMysqli->query($query);
-
         while (($row = $result->fetch_assoc()) != false)
             echo "<div id='inc'>Категория: " . $row['category'] . "<br> Сумма: " . $row['expense'] . " грн.<br> Дата: " . $row['date'] . "<br> </div><br>";
-
     }
 
     public function setExpense ($exp, $cat, $date)
@@ -48,12 +43,9 @@ class Budget
         $this->$exp = $exp;
         $this->$cat = $cat;
         $this->$date = $date;
-
         if ($date == "")
             $date = date("Y-m-d");
-
         $querySetExpense = "INSERT INTO expense (`id`, `date`, `expense`, `category`) VALUES (NULL, '$date', '$exp', '$cat')";
-
         mysqli_query($this->pMysqli,$querySetExpense);
     }
 }
