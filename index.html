@@ -12,9 +12,9 @@
 </head>
 <body>
     <div id="wrapper">
-        <div class="parent" id="father">
+        <div class="parent">
 
-            <div class="child" id="vasia">
+            <div class="child" id="income">
                 <div class="form">
                     <form>
                         <input id="inputIncome" type="number" placeholder="Доход" autocomplete="off">
@@ -24,16 +24,16 @@
                     </form>
                 </div>
                 <div>
-                    <table id="tableIncome">
-                        <tr>
-                            <td>Категория</td>
-                            <td>Сумма</td>
-                            <td>Дата</td>
-                        </tr>
+                    <table id="tableIncome" class="asc">
+<!--                        <tr>
+                            <th><a href='#'>Категория</a></th>
+                            <th><a href='#'>Сумма</a></th>
+                            <th><a href='#'>Дата</a></th>
+                        </tr>-->
                     </table>
                 </div>
             </div>
-            <div class="child" id="petya">
+            <div class="child" id="expense">
                 <div class="form">
                     <form>
                         <input id="inputExpense" type="number" placeholder="Расход" autocomplete="off">
@@ -43,12 +43,8 @@
                     </form>
                 </div>
                 <div>
-                    <table id="tableExpense">
-                        <tr>
-                            <td>Категория</td>
-                            <td>Сумма</td>
-                            <td>Дата</td>
-                        </tr>
+                    <table class="asc" id="tableExpense">
+
                     </table>
                 </div>
             </div>
