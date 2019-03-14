@@ -12,16 +12,16 @@ class DataBase
     private static $_db = null;
     public static function getInstance()
     {
-        if (self::$_db === null){
-            self::$_db = new mysqli ('127.0.0.1', 'root', '', 'budget');
-        }
+        if (self::$_db instanceof self){
+            return self::$_db;
+        } else {
 
-        return self::$_db;
+            return self::$_db = new mysqli ('127.0.0.1', 'root', '', 'budget');
+        }
     }
 
     private function __construct(){}
     private function __clone(){}
-    private function __wakeup(){}
 }
 //<-singleton
 
