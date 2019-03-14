@@ -5,8 +5,30 @@
  * Date: 14.02.2019
  * Time: 15:17
  */
+
+//singleton->
+class DataBase
+{
+    private static $_db = null;
+    public static function getInstance()
+    {
+        if (self::$_db === null){
+            self::$_db = new mysqli ('127.0.0.1', 'root', '', 'budget');
+        }
+
+        return self::$_db;
+    }
+
+    private function __construct(){}
+    private function __clone(){}
+    private function __wakeup(){}
+}
+//<-singleton
+
 class PostHandler {
+    private $_db = null;
     public function __construct($post){
+        $this->_db = DataBase::getInstance();
         $this->post     =   $post;
         $this->table    =   $post['table'];
         $this->amount   =   $post['amount'];
@@ -17,19 +39,16 @@ class PostHandler {
     }
 
     private function select () {
-
-        $db = new mysqli ('127.0.0.1', 'root', '', 'budget');
-
         if (isset ($_POST['amount'])) {
             if ($this->date == "")
                 $this->date = date("Y-m-d");
-            $querySetIncome = "INSERT INTO $this->table (`id`, `date`, `$this->table`, `category`) VALUES (NULL, '$this->date', '$this->amount', '$this->cat')";
-            mysqli_query($db,$querySetIncome);
+            $query = "INSERT INTO $this->table (`id`, `date`, `$this->table`, `category`) VALUES (NULL, '$this->date', '$this->amount', '$this->cat')";
+            mysqli_query($this->_db,$query);
         }
 
-        $result = $db->query("SELECT * FROM $this->table ORDER BY '$this->sort' '$this->by'");
+        $result = $this->_db->query("SELECT * FROM $this->table ORDER BY '$this->sort' '$this->by'");
         while (($row = $result->fetch_assoc()) != false)
-            echo "<tr><td> ". $row['category'] . "</td><td>" . $row['income'] . "</td><td> " .date("d.m.Y", strtotime($row['date'])). "</td><td><a href='#'>изменить</a> / <a href='#'>удалить</a></td></tr>";
+            echo "<tr id ='".$row['id']."'><td> ". $row['category'] . "</td><td>" . $row[$this->table] . "</td><td> " .date("d.m.Y", strtotime($row['date'])). "</td><td><button id='".$row['id']."'>Удалить</button></td></tr>";
     }
 
     public function show() {
