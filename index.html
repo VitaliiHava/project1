@@ -13,9 +13,8 @@
 <body>
     <div id="wrapper">
         <div class="parent">
-
             <div class="child" id="income">
-                <div class="form" id = 'form'>
+                <div class="form">
                     <form>
                         <input id="inputIncome" type="number" placeholder="Доход" autocomplete="off">
                         <input id="inputIncomeCat" type="text" placeholder="Категория" autocomplete="off">
@@ -24,12 +23,14 @@
                     </form>
                 </div>
                 <div>
-                    <table id="tableIncome" class="asc">
-<!--                        <tr>
+                    <table class="tableIncome">
+                        <tr>
                             <th><a href='#'>Категория</a></th>
                             <th><a href='#'>Сумма</a></th>
                             <th><a href='#'>Дата</a></th>
-                        </tr>-->
+                        </tr>
+                    </table>
+                    <table class="tableIncome" id="tableIncome">
                     </table>
                 </div>
             </div>
@@ -42,13 +43,18 @@
                         <input type="button" onclick="expense()" value="Отправить">
                     </form>
                 </div>
-                <div>
-                    <table class="asc" id="tableExpense">
-
+                <div class="form">
+                    <table class="tableExpense">
+                        <tr>
+                            <th><a href='#'>Категория</a></th>
+                            <th><a href='#'>Сумма</a></th>
+                            <th><a href='#'>Дата</a></th>
+                        </tr>
+                    </table>
+                    <table class="tableExpense" id="tableExpense">
                     </table>
                 </div>
             </div>
-
         </div>
     </div>
 </body>

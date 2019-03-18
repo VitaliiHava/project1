@@ -19,7 +19,6 @@ class DataBase
             return self::$_db = new mysqli ('127.0.0.1', 'root', '', 'budget');
         }
     }
-
     private function __construct(){}
     private function __clone(){}
 }

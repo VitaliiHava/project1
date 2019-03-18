@@ -32,23 +32,23 @@ body {
 
 }
 
-#tableIncome {
+.tableIncome {
     width: 100%;
     text-align: center;
     padding: 15px;
     line-height: 20px;
 }
-#tableIncome th, td{
+.tableIncome th, td{
      text-align: left;
  }
 
-#tableExpense {
+.tableExpense {
     width: 100%;
     text-align: center;
     padding: 15px;
     line-height: 20px;
 }
 
-#tableExpense th, td{
+.tableExpense th, td{
     text-align: left;
 }

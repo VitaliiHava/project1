@@ -31,6 +31,7 @@ $(document).ready(
 
     function income() {
         var inc     =    $("#inputIncome").val();
+        inc         =    parseInt(inc);
         var incCat  =    $("#inputIncomeCat").val();
         var incDate =    $("#inputIncomeDate").val();
 
@@ -51,9 +52,12 @@ $(document).ready(
     }
 
     function expense() {
-        var exp     =   $("#inputExpense").val();
-        var expCat  =   $("#inputExpenseCat").val();
-        var expDate =   $("#inputExpenseDate").val();
+        var exp, expCat, expDate;
+        exp     =   $("#inputExpense").val();
+        exp     =   parseInt (exp);
+        expCat  =   $("#inputExpenseCat").val();
+        expDate =   $("#inputExpenseDate").val();
+
 
         $.ajax({
             method  :   "POST",
@@ -71,9 +75,3 @@ $(document).ready(
         });
     }
 
-var container = document.getElementById('form');
-container.onclick = function (event) {
-    if (event.target.tagName === 'BUTTON') {
-        alert('Вы кликнули по кнопке, с id ' + event.target.id);
-    }
-}
