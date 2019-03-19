@@ -1,4 +1,5 @@
 $(document).ready (
+    //get income table
     function(){
         $.ajax ({
             method  :   "POST",
@@ -14,6 +15,7 @@ $(document).ready (
     }
 );
 $(document).ready(
+    //get expense table
     function(){
         $.ajax ({
             method  :   "POST",
@@ -30,6 +32,7 @@ $(document).ready(
 );
 
     function income() {
+        // insret  into income
         var inc     =    $("#inputIncome").val();
         inc         =    parseInt(inc);
         var incCat  =    $("#inputIncomeCat").val();
@@ -52,6 +55,7 @@ $(document).ready(
     }
 
     function expense() {
+        // insret  into expense
         var exp, expCat, expDate;
         exp     =   $("#inputExpense").val();
         exp     =   parseInt (exp);
@@ -75,3 +79,23 @@ $(document).ready(
         });
     }
 
+function del(id , cla) {
+        //delete the row
+    var id      = id; //id element
+    var cla     = cla; // tableName by element
+    console.log (id , cla);
+    $.ajax({
+        method  :   "POST",
+        url     :   "requests.php",
+        data    :   {
+            id   :   id,
+            cla  :   cla,
+        }
+    }).done (function(response){
+        if (cla == "income") {
+            $('#tableIncome').html(response);
+        } else if (cla == "expense") {
+            $('#tableExpense').html(response);
+        }
+    });
+}

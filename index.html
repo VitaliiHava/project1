@@ -8,54 +8,54 @@
     <script src="javascript\script.js"></script>
     <link href="style.css" rel="stylesheet">
     <meta charset="UTF-8">
-    <title>index</title>
+    <title>TITLED</title>
 </head>
-<body>
-    <div id="wrapper">
-        <div class="parent">
-            <div class="child" id="income">
-                <div class="form">
-                    <form>
-                        <input id="inputIncome" type="number" placeholder="Доход" autocomplete="off">
-                        <input id="inputIncomeCat" type="text" placeholder="Категория" autocomplete="off">
-                        <input id="inputIncomeDate" type="date">
-                        <input type="button" onclick="income()" value="Отправить">
-                    </form>
+    <body>
+        <div id="wrapper">
+            <div class="parent">
+                <div class="child" id="income">
+                    <div class="form">
+                        <form>
+                            <input id="inputIncome" type="number" placeholder="Доход" autocomplete="off">
+                            <input id="inputIncomeCat" type="text" placeholder="Категория" autocomplete="off">
+                            <input id="inputIncomeDate" type="date">
+                            <input type="button" onclick="income()" value="Отправить">
+                        </form>
+                    </div>
+                    <div>
+                        <table class="tableIncome">
+                            <tr>
+                                <th><a href='#'>Категория</a></th>
+                                <th><a href='#'>Сумма</a></th>
+                                <th><a href='#'>Дата</a></th>
+                            </tr>
+                        </table>
+                        <table class="tableIncome" id="tableIncome">
+                        </table>
+                    </div>
                 </div>
-                <div>
-                    <table class="tableIncome">
-                        <tr>
-                            <th><a href='#'>Категория</a></th>
-                            <th><a href='#'>Сумма</a></th>
-                            <th><a href='#'>Дата</a></th>
-                        </tr>
-                    </table>
-                    <table class="tableIncome" id="tableIncome">
-                    </table>
-                </div>
-            </div>
-            <div class="child" id="expense">
-                <div class="form">
-                    <form>
-                        <input id="inputExpense" type="number" placeholder="Расход" autocomplete="off">
-                        <input id="inputExpenseCat" type="text" placeholder="Категория" autocomplete="off">
-                        <input id="inputExpenseDate" type="date"/>
-                        <input type="button" onclick="expense()" value="Отправить">
-                    </form>
-                </div>
-                <div class="form">
-                    <table class="tableExpense">
-                        <tr>
-                            <th><a href='#'>Категория</a></th>
-                            <th><a href='#'>Сумма</a></th>
-                            <th><a href='#'>Дата</a></th>
-                        </tr>
-                    </table>
-                    <table class="tableExpense" id="tableExpense">
-                    </table>
+                <div class="child" id="expense">
+                    <div class="form">
+                        <form>
+                            <input id="inputExpense" type="number" placeholder="Расход" autocomplete="off">
+                            <input id="inputExpenseCat" type="text" placeholder="Категория" autocomplete="off">
+                            <input id="inputExpenseDate" type="date"/>
+                            <input type="button" onclick="expense()" value="Отправить">
+                        </form>
+                    </div>
+                    <div class="form">
+                        <table class="tableExpense">
+                            <tr>
+                                <th><a href='#'>Категория</a></th>
+                                <th><a href='#'>Сумма</a></th>
+                                <th><a href='#'>Дата</a></th>
+                            </tr>
+                        </table>
+                        <table class="tableExpense" id="tableExpense">
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</body>
+    </body>
 </html>
