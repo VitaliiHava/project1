@@ -80,3 +80,6 @@ class PostHandler
 $postHandler = new PostHandler($_POST);
 $postHandler->delete();
 $postHandler->show();
+
+могу редактировать?
+    
